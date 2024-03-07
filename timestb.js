@@ -4,7 +4,7 @@
 
     // 初期設定　フィールドコードとボタンのスペースIDの設定
     const my_field_code = 'Now_datetime';
-    const my_space_ID = 'button_space'; 
+    const my_space_ID = 'button_space2'; 
 
     // 新規登録と編集画面でイベント発火
     const events = [
