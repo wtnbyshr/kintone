@@ -1,11 +1,11 @@
-/*  現在日時入力ボタン   */
+/* 現在日時入力ボタン */
 (function() {
     'use strict';
-    // 初期設定　フィールドコードとボタンのスペースIDの設定
+    // 初期設定 フィールドコードとボタンのスペースIDの設定
     const my_field_code = 'Now_datetime';
     const my_space_ID = 'button_space';
     const my_timest_3 = 'timestamp3';
-   
+
     // 新規登録と編集画面でイベント発火
     const events = [
         'app.record.create.show',
@@ -18,16 +18,20 @@
         const startButton = document.createElement('button');
         startButton.innerText = '打刻ボタン';
         startButton.onclick = function() {
-            const currentDatetime = new Date().toISOString();            
-            var extractedString = currentDatetime.substring(20, 23);                        
-            window.alert(`タイムスタンプは${currentDatetime}です！`);            
-            record[my_timest_3].value = extractedString;
-            record[my_field_code].value = Number(currentDatetime); 
-            kintone.app.record.set(event);
-        };        
+        // 現在の日時を取得
+        const currentDatetime = new Date().toISOString();
+        // ミリ秒を抽出
+        var extractedString = currentDatetime.substring(19, 23);
+        // レコードの取得
+        let obj = kintone.app.record.get();
+        // フィールドに値を設定
+
+        obj.record[my_field_code].value = currentDatetime;
+        // レコードの更新
+        kintone.app.record.set(obj);
+        };
         // ボタンをフォームに追加
-        kintone.app.record.getSpaceElement(my_space_ID).appendChild(startButton);        
-        // 
-        return event;  
+        kintone.app.record.getSpaceElement(my_space_ID).appendChild(startButton);
+        return event;
     });
 })();
