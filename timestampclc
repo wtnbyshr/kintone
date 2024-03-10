@@ -1,4 +1,4 @@
-/* 現在日時入力ボタン */
+/* 現在日時のミリ秒部分をtimestamp3textに代入 */
 (function() {
     'use strict';
     // 初期設定 
@@ -21,8 +21,7 @@ kintone.events.on(['app.record.create.submit', 'app.record.edit.submit'], (event
         // レコードの更新
         kintone.app.record.set(obj);
         };
-        // ボタンをフォームに追加
-        kintone.app.record.getSpaceElement(my_space_ID).appendChild(startButton);
+
         return event;
     });
 })();
