@@ -10,17 +10,22 @@
         'app.record.create.submit',
         'app.record.edit.submit'
     ];
+    
     kintone.events.on(events, function(event) {
         const record = event.record;
+        
+        // レコードの取得
+        let obj = kintone.app.record.get();
 
         // 現在の日時を取得
         const currentDatetime = record['Now_datetime'].value;
+        
         // ミリ秒を抽出
         var extractedString = currentDatetime.substring(19, 23);
-        // レコードの取得
-        let obj = kintone.app.record.get();
+
         // フィールドに値を設定
         obj.record[my_timest_3text].value = extractedString;
+        
         // レコードの更新
         kintone.app.record.set(obj);
         
