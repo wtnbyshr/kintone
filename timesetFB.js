@@ -12,7 +12,7 @@
 
     // フィールドに値を設定
     state.record.Now_datetime.value = currentDatetime;
-    state.record.timest3.value = number(currentDatetime);
+    state.record.timest3.value = currentDatetimemill;
     
     return state;
   }];
