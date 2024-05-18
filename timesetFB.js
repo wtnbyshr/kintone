@@ -6,7 +6,7 @@
     const my_field_code = 'Now_datetime';
   
     // フォームから確認画面に移動する前でイベント発火
-    fb.events.form.confirm = [function (state) {
+    fb.events.form.created = [function (state) {
 
         // 現在の日時を取得しISOを取得
         const date = luxon.DateTime.local();
