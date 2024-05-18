@@ -2,8 +2,7 @@
   "use strict";
 
   // 初期設定 フィールドコードの設定
-  const date = luxon.DateTime.local();
-  const jigyoushaid = state.record.事業者ID.value
+
   const baikainum = state.record.媒介公募番号.value
 
   // フォームから確認画面に移動する前でイベント発火
