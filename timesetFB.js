@@ -1,7 +1,8 @@
-/* 現在日時入力ボタン */
+/* 現在日時入力・フォームブリッジ */
 (function() {
-    'use strict';
-    // 初期設定 フィールドコードDの設定
+  "use strict";
+    
+    // 初期設定 フィールドコードの設定
     const my_field_code = 'Now_datetime';
   
     // フォームから確認画面に移動する前でイベント発火
@@ -11,7 +12,7 @@
         const currentDatetime = new Date().toISOString();
             
         // フィールドに値を設定
-        textField.getElementByCode(my_field_code).value = currentDatetime;
+        state.my_field_code.value = currentDatetime;
        
 
    }];
