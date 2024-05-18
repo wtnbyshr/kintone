@@ -12,7 +12,7 @@
 
     // フィールドに値を設定
     state.record.Now_datetime.value = currentDatetime;
-    state.record.媒介公募番号事業者ID.value = baikainum + jigyoushaid
+    
     return state;
   }];
 })();
