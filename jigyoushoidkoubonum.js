@@ -3,7 +3,7 @@
 
   fb.events.form.created = [function (state) {
     console.log(state);
-      
+      const baikainum = state.record.媒介公募番号.value
       const jigyoushaid = state.record.事業者ID.value
     
     state.record.媒介公募番号事業者ID.value = baikainum + jigyoushaid
