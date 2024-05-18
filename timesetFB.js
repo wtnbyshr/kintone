@@ -8,7 +8,7 @@
   fb.events.form.mounted = [function (state) {
     // 現在の日時を取得しISOを取得
     const currentDatetime = date.toISO();
-    const currentDatetimemill = str.currentDatetime(22,24);;
+    const currentDatetimemill = currentDatetime.substring(22,24);;
 
     // フィールドに値を設定
     state.record.Now_datetime.value = currentDatetime;
