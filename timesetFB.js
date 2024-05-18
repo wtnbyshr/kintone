@@ -13,7 +13,9 @@
         const currentDatetime = date.toISO();
             
         // フィールドに値を設定
-        textField.getElementsByCode(my_field_code).value = currentDatetime;
+        state.record.my_field_code.value = currentDatetime;
+
+      return state; 
        
 
    }];
