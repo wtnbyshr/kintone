@@ -5,8 +5,7 @@
   'use strict';
   
   kintone.events.on('app.record.edit.show', (event) => {
-// 現在時刻の設定  
-    const date = luxon.DateTime.local();a
+
 // ボタンの設定  
     const ranksetbtn = document.createElement('button');
     ranksetbtn.textContent = '抽選開始';
@@ -109,7 +108,8 @@
            
             kintone.api(kintone.api.url('/k/v1/record.json', true), 'GET', body4, function(resp) {
               
-                
+                // 現在時刻の設定  
+                const date = luxon.DateTime.local();
                 const baikaiketteidate = date.toFormat('yyyy-MM-dd');
 
                 event.record['媒介登録事業者名称'].value = resp.record.宅建事業者名.value;
